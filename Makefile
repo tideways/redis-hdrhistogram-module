@@ -3,10 +3,10 @@
 OPT ?= -O3
 
 CC = gcc
-CFLAGS = -Iinclude -fPIC -Wall -Wextra -lc -lm -std=gnu99 -g $(OPT)
+CFLAGS = -I/usr/local/include -Iinclude -fPIC -Wall -Wextra -lc -lm -std=gnu99 -g $(OPT)
 LDFLAGS = -shared
 
-TARGET = tdigest.so
+TARGET = hdrhistogram.so
 SOURCES = $(wildcard src/*.c)
 HEADERS = $(wildcard include/*.h)
 OBJECTS = $(SOURCES:.c=.o)
@@ -14,7 +14,7 @@ OBJECTS = $(SOURCES:.c=.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(LD) -o $@ $(LDFLAGS) -lm -lc $(OBJECTS)
+	$(LD) -o $@ $(LDFLAGS) -lm -lc $(OBJECTS) -lhdr_histogram
 
 noopt:
 	$(MAKE) OPT="-O0"
