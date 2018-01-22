@@ -1,7 +1,7 @@
 # Redis HDRHistogram Module
 
 HdrHistogram Redis Type and corresponding commands based on the
-[HdrHistogram_C](https://github.com/HdrHistogram/HdrHistogram_c) by [Mark
+[HdrHistogram_C](https://github.com/HdrHistogram/HdrHistogram_c) by [Michael
 Barker](https://github.com/mikeb01).
 
 This Redis Module is Work in Progress / Prototype. Not all documented commands
